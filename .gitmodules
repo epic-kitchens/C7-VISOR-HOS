@@ -1,0 +1,3 @@
+[submodule "VISOR-HOS"]
+	path = VISOR-HOS
+	url = https://github.com/epic-kitchens/VISOR-HOS

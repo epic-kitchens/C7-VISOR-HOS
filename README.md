@@ -28,9 +28,17 @@ Make sure your `input_dir` folder structure is as below:
 /path/to/your/inputs
 |--- ref
 |    |--- epick_visor_coco_hos
+|         |---annotations
+|             |---val.json
 |    |--- epick_visor_coco_handside
+|         |---annotations
+|             |---val.json
 |    |--- epick_visor_coco_contact
+|         |---annotations
+|             |---val.json
 |    |--- epick_visor_coco_combineHO
+|         |---annotations
+|             |---val.json
 |--- res
 |    |--- instances_predictions_hand_obj.pth
 |    |--- instances_predictions_handside.pth
@@ -40,7 +48,7 @@ Make sure your `input_dir` folder structure is as below:
 
 Then, simply evaluate with the command below:
 ```
-python evaluate_hos.py input_dir output_dir
+python evaluate_hos.py --input_dir=/path/to/your/inputs --output_dir=/path/to/your/outputs
 ```
 
 

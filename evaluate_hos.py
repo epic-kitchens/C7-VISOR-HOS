@@ -11,10 +11,6 @@ from detectron2.data import MetadataCatalog
 from hos.data.datasets.epick import register_epick_instances
 from hos.evaluation.epick_evaluation import EPICKEvaluator
 
-# __here__ = Path(__file__).absolute().parent
-# sys.path.append(str(__here__.parent))
-
-
 
 def main(args):
     #********** check and make directory **********#
@@ -63,7 +59,6 @@ def main(args):
         
         result_dir = os.path.join('./d2_outputs/', dataset_name)
         os.makedirs(result_dir, exist_ok=True)
-        print('result dir = ', result_dir)
 
         
         # ****** evaluator ******#
@@ -87,7 +82,7 @@ def main(args):
         
         
         # ****** evaluating ******#
-        print("evaluating with [detectron2 evaluation]")
+        print("evaluating...")
         results_i = evaluator.evaluate()
         
         
@@ -95,15 +90,13 @@ def main(args):
         if task == 'hand_obj':
             scores['hand']   = f"{results_i['segm']['AP-hand']}"
             scores['object'] = f"{results_i['segm']['AP-object']}"
-            
         elif task == 'handside':
             scores['handside']   = f"{results_i['segm']['AP']}"
-            
         elif task == 'contact':
             scores['contact']   = f"{results_i['segm']['AP']}"
-            
         elif task == 'combineHO':
             scores['combineHO']   = f"{results_i['segm']['AP']}"
+        print('\n\n')
             
             
     # ****** save ******#
@@ -111,28 +104,24 @@ def main(args):
     with open(score_path, 'w') as f:
         for name, score in scores.items():
             f.write(f'{name}: {score}\n')
+    print(f'\n\nscores = {scores}')
+    
 
-        
-    
-    print(f'scores = {scores}')
-    
 
 if __name__ == '__main__':
-    
-    
     parser = argparse.ArgumentParser(
         description="Evaluate EPIC-Kitchens Hand Object Segmentation challenge results",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(
-        "input_dir",
+        "--input_dir",
         type=Path,
         help="Directory containing subfolders `res`, "
         "the submitted results, and `ref`, the ground"
         "truth reference to evaluate against",
     )
     parser.add_argument(
-        "output_dir", type=Path, help="Directory in which to write `scores.txt`"
+        "--output_dir", type=Path, help="Directory in which to write `scores.txt`"
     )
     args = parser.parse_args()
     
