@@ -17,11 +17,12 @@ Please Go to [EPIC-KITCHENS VISOR](https://epic-kitchens.github.io/VISOR/) offic
 - FYI, we use the COCO Mask AP metric implemented in [Detectron2](https://github.com/facebookresearch/detectron2) to get the numbers in our paper and in our challenge.
 - Plese refer to [VISOR-HOS](https://github.com/epic-kitchens/VISOR-HOS) to check how we get COCO Mask AP evaluation in our baseline method. 
 - For the HOS Codalab Challenge evaluation, with the 4 prediction PTH files prepared as instructed in the Codalab challenge, you can run the commend below to get the scores as in the table.
-- For more details about the prediction PTH file and its format, if you follow the [Detectron2 COCOEvaluator](https://detectron2.readthedocs.io/en/latest/modules/evaluation.html#detectron2.evaluation.COCOEvaluator), there will be `instances_predictions.pth` automatically generated and saved in your output folder, `/path/to/your/ouputs/inference`. So anytime you are confused or uncertain about the PTH format, please check the 
+- For more details about the prediction PTH file and its format, if you follow the [Detectron2 COCOEvaluator](https://detectron2.readthedocs.io/en/latest/modules/evaluation.html#detectron2.evaluation.COCOEvaluator), there will be `instances_predictions.pth` automatically generated and saved in your output folder, `/path/to/your/ouputs/inference`. So anytime you are confused or uncertain about the PTH format, you can check that too.
  
-Add [VISOR-HOS](https://github.com/epic-kitchens/VISOR-HOS) as submodule of this repository.
+
+Get [VISOR-HOS](https://github.com/epic-kitchens/VISOR-HOS) as submodule of this repository.
 ```
-git submodule add https://github.com/epic-kitchens/VISOR-HOS
+git submodule update --init
 ```
 Make sure your `input_dir` folder structure is as below:
 ```
