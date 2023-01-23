@@ -9,7 +9,7 @@ Please Go to [EPIC-KITCHENS VISOR](https://epic-kitchens.github.io/VISOR/) offic
 
 
 ## Data Loader and Environments
-- Refer to [VISOR-HOS](https://github.com/epic-kitchens/VISOR-HOS) repository for how to load the data and generate COCO format annotation from the raw format in the download. You can also use other ways to load the data and other data formats. 
+- Refer to [VISOR-HOS](https://github.com/epic-kitchens/VISOR-HOS) repository for how to load the data and generate COCO format annotation from the raw format in the download. You can also use other ways to load the data and other data formats too. 
 - Refer to [VISOR-HOS Environment](https://github.com/epic-kitchens/VISOR-HOS#environment) session for environment setup. 
  
 
