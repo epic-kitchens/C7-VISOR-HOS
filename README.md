@@ -1,7 +1,7 @@
 # EPIC-KITCHENS Hand Object Segmentation (HOS) Challenge
 
 ## HOS Challenge on Codalab platform
-To participate and submit to this HOS challenge, register at the [HOS Codalab Challenge](https://codalab.lisn.upsaclay.fr/competitions/9910?secret_key=4ddd83a9-9d78-4c4d-b03f-7f5f4e32434f).
+To participate and submit to this HOS challenge, register at the [HOS Codalab Challenge](https://codalab.lisn.upsaclay.fr/competitions/9969?secret_key=415101af-8490-404b-a28c-d6a4fbad4bcd).
 
 
 ## Data Download
@@ -17,14 +17,16 @@ Please Go to [EPIC-KITCHENS VISOR](https://epic-kitchens.github.io/VISOR/) offic
 - FYI, we use the COCO Mask AP metric implemented in [Detectron2](https://github.com/facebookresearch/detectron2) to get the numbers in our paper and in our challenge.
 - Plese refer to [VISOR-HOS](https://github.com/epic-kitchens/VISOR-HOS) to check how we get COCO Mask AP evaluation in our baseline method. 
 - For the HOS Codalab Challenge evaluation, with the 4 prediction PTH files prepared as instructed in the Codalab challenge, you can run the commend below to get the scores as in the table.
-- For more details about the prediction PTH file and its format, if you follow the [Detectron2 COCOEvaluator](https://detectron2.readthedocs.io/en/latest/modules/evaluation.html#detectron2.evaluation.COCOEvaluator), there will be `instances_predictions.pth` automatically generated and saved in your output folder, `/path/to/your/ouputs/inference`. So anytime you are confused or uncertain about the PTH format, you can check that too.
+- For more details about the prediction PTH file and its format, if you use the [Detectron2 COCOEvaluator](https://detectron2.readthedocs.io/en/latest/modules/evaluation.html#detectron2.evaluation.COCOEvaluator), there will be a `instances_predictions.pth` file automatically generated and saved in the output folder, `/path/to/your/outputs/inference`. So anytime you are confused or uncertain about the PTH format, you can check that too.
  
 
-Get [VISOR-HOS](https://github.com/epic-kitchens/VISOR-HOS) as submodule of this repository.
+Get [VISOR-HOS](https://github.com/epic-kitchens/VISOR-HOS) as submodule of this repository:
 ```
 git submodule update --init
 ```
-Make sure your `input_dir` folder structure is as below:
+
+Make sure your `input_dir` folder structure is as below. Under the `input_dir`, there will be a `ref` sub-folder containing the COCO format annotations and a `res` sub-folder containing the predictions of your method in the required format.
+
 ```
 /path/to/your/inputs
 |--- ref
